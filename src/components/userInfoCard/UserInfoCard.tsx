@@ -64,6 +64,8 @@ const UserInfoCard = ({ userId }: { userId: string }) => {
                 <span>Joined November 2021</span>
             </div>
         </div>
+        <button className='bg-blue-500 text-white text-sm rounded-md p-2'>Follow</button>
+        <span className='text-red-400 text-sm cursor-pointer self-end'>Block User</span>
       </div>
     </div>
   )
