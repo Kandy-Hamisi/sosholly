@@ -5,6 +5,7 @@ import Link from 'next/link'
 import React from 'react'
 import UserInfoCardInteraction from '../userInfoCardInteraction/UserInfoCardInteraction'
 import { User } from '@prisma/client'
+import UpdateUser from '../updateUser/UpdateUser'
 
 const UserInfoCard = async ({ user }: { user: User }) => {
 
@@ -56,7 +57,12 @@ const UserInfoCard = async ({ user }: { user: User }) => {
       {/* top */}
       <div className='flex justify-between items-center font-medium'>
         <span className='text-gray-500'>User Information</span>
-        <Link href="/" className='text-blue-500 text-xs'>See all</Link>
+        {
+            currentUserId === user.id ?
+            <UpdateUser user={user} />
+            : <Link href="/" className='text-blue-500 text-xs'>See all</Link>
+        }
+        
       </div>
       {/* bototm */}
       <div className='flex flex-col gap-4 text-gray-500'>
