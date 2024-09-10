@@ -8,7 +8,9 @@ import UserInfoCard from "./userInfoCard/UserInfoCard";
 import UserMediaCard from "./userMediaCard/UserMediaCard";
 import UserInfoCardInteraction from "./userInfoCardInteraction/UserInfoCardInteraction";
 import FriendRequestList from "./friendRequestList/FriendRequestList";
-
+import UpdateUser from "./updateUser/UpdateUser";
+import UpdateButton from "./updateButton/UpdateButton";
+import PostInteraction from "./postInteraction/PostInteraction";
 
 export {
     Navbar,
@@ -21,4 +23,7 @@ export {
     UserMediaCard,
     UserInfoCardInteraction,
     FriendRequestList,
+    UpdateUser,
+    UpdateButton,
+    PostInteraction,
 }
