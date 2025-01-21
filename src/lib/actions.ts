@@ -9,7 +9,7 @@ import { revalidatePath } from "next/cache";
 
 
 export const switchFollow = async (userId: string) => {
-    const { userId: currentUserId } = auth();
+    const { userId: currentUserId } = await auth();
 
     if (!currentUserId) {
         throw new Error("User is not Authenticated");
@@ -60,7 +60,7 @@ export const switchFollow = async (userId: string) => {
 }
 
 export const acceptFollowRequest = async (userId:string) => {
-    const { userId: currentUserId } = auth();
+    const { userId: currentUserId } = await auth();
 
     if (!currentUserId) {
         throw new Error("User is not Authenticated");
@@ -90,7 +90,7 @@ export const acceptFollowRequest = async (userId:string) => {
 }
 
 export const declineFollowRequest = async (userId:string) => {
-    const { userId: currentUserId } = auth();
+    const { userId: currentUserId } = await auth();
 
     if (!currentUserId) {
         throw new Error("User is not Authenticated");
@@ -144,7 +144,7 @@ export const updateProfile = async (prevState:{success:boolean, error:boolean}, 
         return { success: false, error: true }
     }
 
-    const { userId } = auth();
+    const { userId } = await auth();
 
     if (!userId) {
         return { success: false, error: true }
@@ -166,7 +166,7 @@ export const updateProfile = async (prevState:{success:boolean, error:boolean}, 
 
 export const switchLike = async (postId: number) => {
 
-    const { userId } = auth();
+    const { userId } = await auth();
 
     if (!userId) {
         throw new Error("User is not Authenticated");
@@ -203,7 +203,7 @@ export const switchLike = async (postId: number) => {
 };
 
 export const addComment = async(postId:number, desc:string) => {
-    const { userId } = auth();
+    const { userId } = await auth();
 
     if (!userId) {
         throw new Error("User is not Authenticated");
@@ -240,7 +240,7 @@ export const addPost = async (formData: FormData, img: string) => {
         return
     }
 
-    const { userId } = auth();
+    const { userId } = await auth();
 
     if (!userId) {
         throw new Error("User is not Authenticated");
@@ -262,7 +262,7 @@ export const addPost = async (formData: FormData, img: string) => {
 
 
 export const addStory = async ( img: string) => {
-    const { userId } = auth();
+    const { userId } = await auth();
 
     if (!userId) {
         throw new Error("User is not Authenticated");
@@ -313,7 +313,7 @@ export const addStory = async ( img: string) => {
 
 
 const deleteStory = async (postId: number) => {
-    const { userId } = auth();
+    const { userId } = await auth();
 
     if (!userId) {
         throw new Error("User is not Authenticated");

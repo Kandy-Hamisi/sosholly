@@ -9,7 +9,7 @@ type FeedPostType = PostType & { user: User } & { likes: [ {userId: string }]} &
 
 const Feed = async ({ username}: { username?:string }) => {
 
-  const { userId } = auth();
+  const { userId } = await auth();
 
   let posts:any = [];
 

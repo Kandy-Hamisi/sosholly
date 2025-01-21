@@ -25,7 +25,7 @@ const ProfilePage = async ({ params }: { params: { username: string }}) => {
   })
   if (!user) return notFound();
 
-  const { userId: currentUserId } = auth();
+  const { userId: currentUserId } = await auth();
 
   let isBlocked;
 

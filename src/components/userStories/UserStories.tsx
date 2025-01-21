@@ -6,7 +6,7 @@ import StoryList from '../storyList/StoryList'
 
 const UserStories = async () => {
 
-    const { userId: currentUserId } = auth();
+    const { userId: currentUserId } = await auth();
 
     if (!currentUserId) return null;
 
