@@ -7,7 +7,7 @@ import React from 'react'
 
 const ProfilePage = async ({ params }: { params: { username: string }}) => {
 
-  const username = params.username;
+  const { username} = await params;
 
   const user = await prisma.user.findFirst({
     where: {
